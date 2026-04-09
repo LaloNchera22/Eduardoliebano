@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eduardo Liebano — AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,11 +21,27 @@
       <a href="#experience">XP</a>
       <a href="#contact">CONTACT</a>
     </div>
-    <div class="nav-status">
-      <span class="status-dot"></span>
-      <span>AVAILABLE FOR HIRE</span>
+    <div class="nav-right">
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span>AVAILABLE FOR HIRE</span>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <a href="#about" class="nav-mobile-link">ABOUT</a>
+    <a href="#skills" class="nav-mobile-link">SKILLS</a>
+    <a href="#projects" class="nav-mobile-link">PROJECTS</a>
+    <a href="#experience" class="nav-mobile-link">XP</a>
+    <a href="#contact" class="nav-mobile-link">CONTACT</a>
+  </div>
 
   <!-- HERO -->
   <section id="hero">
@@ -45,17 +61,17 @@
         <span class="g-green">MLOps</span>
       </div>
       <p class="hero-bio">
-        Construyo sistemas de inteligencia artificial que resuelven<br/>
-        problemas reales — desde modelos a producción.
+        I build AI systems that solve real problems —<br/>
+        from prototype to production.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn-primary">VER PROYECTOS</a>
-        <a href="#contact" class="btn-ghost">CONTACTAR</a>
+        <a href="#projects" class="btn-primary">VIEW PROJECTS</a>
+        <a href="#contact" class="btn-ghost">GET IN TOUCH</a>
       </div>
       <div class="hero-links">
         <a href="https://github.com/eduardoliebano" target="_blank" class="social-link">GITHUB ↗</a>
         <a href="https://linkedin.com/in/eduardoliebano" target="_blank" class="social-link">LINKEDIN ↗</a>
-        <a href="mailto:hola@eduardoliebano.dev" class="social-link">EMAIL ↗</a>
+        <a href="mailto:hello@eduardoliebano.dev" class="social-link">EMAIL ↗</a>
       </div>
     </div>
     <div class="hero-ascii">
@@ -69,10 +85,12 @@
 │  ACC:    98.7%  █████████░  │
 └─────────────────────────────┘
       </pre>
-      <div class="floating-tag tag-blue">PYTHON</div>
-      <div class="floating-tag tag-red">TENSORFLOW</div>
-      <div class="floating-tag tag-green">PYTORCH</div>
-      <div class="floating-tag tag-yellow">LANGCHAIN</div>
+      <div class="floating-tags">
+        <div class="floating-tag tag-blue">PYTHON</div>
+        <div class="floating-tag tag-red">TENSORFLOW</div>
+        <div class="floating-tag tag-green">PYTORCH</div>
+        <div class="floating-tag tag-yellow">LANGCHAIN</div>
+      </div>
     </div>
   </section>
 
@@ -124,30 +142,30 @@
     <div class="about-grid">
       <div class="about-text">
         <p class="about-lead">
-          Soy <strong>Eduardo Liebano</strong>, ingeniero de IA especializado en construir sistemas de aprendizaje automático escalables y pipelines de datos inteligentes.
+          I'm <strong>Eduardo Liebano</strong>, an AI Engineer specializing in scalable machine learning systems and intelligent data pipelines.
         </p>
         <p>
-          Mi enfoque está en llevar modelos de ML del prototipo a producción con calidad de ingeniería real: arquitecturas limpias, inferencia rápida, y sistemas que escalan.
+          My focus is taking ML models from prototype to production with real engineering quality: clean architectures, fast inference, and systems that scale.
         </p>
         <p>
-          Trabajo con LLMs, fine-tuning, RAG, embeddings, y la infraestructura que los rodea. Si hay un problema que la IA puede resolver de forma más eficiente, me interesa.
+          I work with LLMs, fine-tuning, RAG, embeddings, and the surrounding infrastructure. If AI can solve a problem more efficiently, I'm interested.
         </p>
         <div class="about-stats">
           <div class="stat">
             <span class="stat-num g-blue">3+</span>
-            <span class="stat-label">AÑOS EN ML</span>
+            <span class="stat-label">YEARS IN ML</span>
           </div>
           <div class="stat">
             <span class="stat-num g-red">15+</span>
-            <span class="stat-label">PROYECTOS AI</span>
+            <span class="stat-label">AI PROJECTS</span>
           </div>
           <div class="stat">
             <span class="stat-num g-yellow">5+</span>
-            <span class="stat-label">MODELOS EN PROD</span>
+            <span class="stat-label">MODELS IN PROD</span>
           </div>
           <div class="stat">
             <span class="stat-num g-green">∞</span>
-            <span class="stat-label">CURIOSIDAD</span>
+            <span class="stat-label">CURIOSITY</span>
           </div>
         </div>
       </div>
@@ -231,7 +249,7 @@
           <li>Docker / Kubernetes</li>
           <li>GCP / AWS / Azure ML</li>
           <li>MLflow / Weights & Biases</li>
-          <li>CI/CD para ML pipelines</li>
+          <li>CI/CD for ML Pipelines</li>
           <li>FastAPI / Triton Inference</li>
           <li>Ray / Dask (Distributed)</li>
         </ul>
@@ -247,10 +265,10 @@
           <span class="skill-tag g-green">BASE</span>
         </div>
         <ul>
-          <li>Python (avanzado)</li>
+          <li>Python (advanced)</li>
           <li>SQL / NoSQL / Spark</li>
-          <li>C++ (inferencia ONNX)</li>
-          <li>Bash / Linux avanzado</li>
+          <li>C++ (ONNX inference)</li>
+          <li>Bash / Linux (advanced)</li>
           <li>Git / GitHub Actions</li>
           <li>Pandas / NumPy / Polars</li>
         </ul>
@@ -277,7 +295,7 @@
           <span class="project-type g-blue">LLM · RAG · PRODUCTION</span>
         </div>
         <h3>RAG Enterprise Engine</h3>
-        <p>Sistema RAG multi-tenant para empresas: embeddings semánticos, re-ranking con cross-encoders, y síntesis generativa con GPT-4. Procesa +500K documentos en tiempo real.</p>
+        <p>Multi-tenant RAG system for enterprises: semantic embeddings, cross-encoder re-ranking, and generative synthesis with GPT-4. Processes 500K+ documents in real time.</p>
         <div class="project-stack">
           <span>Python</span>
           <span>LangChain</span>
@@ -297,8 +315,8 @@
           <span class="project-num">P02</span>
           <span class="project-type g-red">FINE-TUNING · NLP</span>
         </div>
-        <h3>LLM Fine-Tuner para Dominio Médico</h3>
-        <p>Pipeline de fine-tuning con QLoRA sobre Mistral-7B para clasificación y extracción de entidades en texto clínico. F1-score: 0.94.</p>
+        <h3>LLM Fine-Tuner for Medical Domain</h3>
+        <p>Fine-tuning pipeline with QLoRA on Mistral-7B for classification and entity extraction from clinical text. F1-score: 0.94.</p>
         <div class="project-stack">
           <span>PyTorch</span>
           <span>HuggingFace</span>
@@ -316,8 +334,8 @@
           <span class="project-num">P03</span>
           <span class="project-type g-yellow">VISION · YOLO · EDGE</span>
         </div>
-        <h3>Object Detection en Edge Devices</h3>
-        <p>Modelo YOLO optimizado para Raspberry Pi con ONNX + TensorRT. Detección en tiempo real a 30fps con 8MB de footprint.</p>
+        <h3>Object Detection on Edge Devices</h3>
+        <p>YOLO model optimized for Raspberry Pi with ONNX + TensorRT. Real-time detection at 30fps with an 8MB footprint.</p>
         <div class="project-stack">
           <span>YOLOv8</span>
           <span>ONNX</span>
@@ -336,7 +354,7 @@
           <span class="project-type g-green">AGENTS · AUTOMATION</span>
         </div>
         <h3>AI Agent Framework</h3>
-        <p>Framework de agentes autónomos con memoria persistente, planificación por pasos y ejecución de herramientas externas. Compatible con Claude y GPT-4.</p>
+        <p>Autonomous agent framework with persistent memory, step planning, and external tool execution. Compatible with Claude and GPT-4.</p>
         <div class="project-stack">
           <span>Python</span>
           <span>LangGraph</span>
@@ -363,13 +381,13 @@
     <div class="xp-list">
 
       <div class="xp-item">
-        <div class="xp-date">2023 — PRESENTE</div>
+        <div class="xp-date">2023 — PRESENT</div>
         <div class="xp-content">
           <div class="xp-title">
             <h3>AI Engineer</h3>
             <span class="xp-company g-blue">[ STARTUP STEALTH MODE ]</span>
           </div>
-          <p>Diseño y despliegue de pipelines de ML en producción. Implementación de sistemas RAG, fine-tuning de LLMs, y arquitecturas de agentes para automatización empresarial.</p>
+          <p>Design and deployment of ML pipelines in production. Implementation of RAG systems, LLM fine-tuning, and agent architectures for enterprise automation.</p>
           <div class="xp-tags">
             <span>LLMs</span><span>RAG</span><span>Python</span><span>GCP</span>
           </div>
@@ -381,9 +399,9 @@
         <div class="xp-content">
           <div class="xp-title">
             <h3>ML Engineer</h3>
-            <span class="xp-company g-red">[ CONSULTORA TECNOLÓGICA ]</span>
+            <span class="xp-company g-red">[ TECH CONSULTANCY ]</span>
           </div>
-          <p>Desarrollo de modelos de clasificación y predicción para clientes enterprise. Migración de modelos monolíticos a microservicios con FastAPI y Docker.</p>
+          <p>Development of classification and prediction models for enterprise clients. Migration from monolithic models to microservices with FastAPI and Docker.</p>
           <div class="xp-tags">
             <span>PyTorch</span><span>FastAPI</span><span>Docker</span><span>AWS</span>
           </div>
@@ -395,9 +413,9 @@
         <div class="xp-content">
           <div class="xp-title">
             <h3>Data Scientist</h3>
-            <span class="xp-company g-green">[ EMPRESA FINTECH ]</span>
+            <span class="xp-company g-green">[ FINTECH COMPANY ]</span>
           </div>
-          <p>Modelos de scoring crediticio, detección de fraude con aprendizaje no supervisado, y dashboards analíticos. Reducción del 23% en falsos positivos de fraude.</p>
+          <p>Credit scoring models, unsupervised fraud detection, and analytical dashboards. Achieved a 23% reduction in fraud false positives.</p>
           <div class="xp-tags">
             <span>Scikit-learn</span><span>XGBoost</span><span>SQL</span><span>Tableau</span>
           </div>
@@ -417,14 +435,14 @@
     <div class="contact-grid">
       <div class="contact-text">
         <h3 class="contact-headline">
-          ¿Tienes un problema<br/>
-          que la <span class="g-blue">IA puede resolver</span>?
+          Have a problem<br/>
+          <span class="g-blue">AI can solve</span>?
         </h3>
-        <p>Hablemos. Estoy disponible para proyectos freelance, roles full-time, y colaboraciones en investigación.</p>
+        <p>Let's talk. I'm available for freelance projects, full-time roles, and research collaborations.</p>
         <div class="contact-links">
-          <a href="mailto:hola@eduardoliebano.dev" class="contact-item">
+          <a href="mailto:hello@eduardoliebano.dev" class="contact-item">
             <span class="contact-label">EMAIL</span>
-            <span class="contact-value">hola@eduardoliebano.dev ↗</span>
+            <span class="contact-value">hello@eduardoliebano.dev ↗</span>
           </a>
           <a href="https://linkedin.com/in/eduardoliebano" target="_blank" class="contact-item">
             <span class="contact-label">LINKEDIN</span>
@@ -439,11 +457,11 @@
       <div class="contact-box">
         <div class="contact-box-inner">
           <div class="cbox-row"><span class="cbox-key g-blue">STATUS</span><span class="cbox-val">OPEN TO WORK</span></div>
-          <div class="cbox-row"><span class="cbox-key g-red">TIPO</span><span class="cbox-val">FREELANCE / FULL-TIME</span></div>
-          <div class="cbox-row"><span class="cbox-key g-yellow">ZONA</span><span class="cbox-val">LATAM · REMOTO GLOBAL</span></div>
-          <div class="cbox-row"><span class="cbox-key g-green">IDIOMAS</span><span class="cbox-val">ES / EN</span></div>
+          <div class="cbox-row"><span class="cbox-key g-red">TYPE</span><span class="cbox-val">FREELANCE / FULL-TIME</span></div>
+          <div class="cbox-row"><span class="cbox-key g-yellow">LOCATION</span><span class="cbox-val">LATAM · GLOBAL REMOTE</span></div>
+          <div class="cbox-row"><span class="cbox-key g-green">LANGUAGES</span><span class="cbox-val">ES / EN</span></div>
           <div class="cbox-divider"></div>
-          <div class="cbox-row"><span class="cbox-key">RESPUESTA</span><span class="cbox-val">&lt; 24h</span></div>
+          <div class="cbox-row"><span class="cbox-key">RESPONSE</span><span class="cbox-val">&lt; 24h</span></div>
         </div>
       </div>
     </div>
@@ -457,7 +475,7 @@
       <div class="footer-links">
         <a href="https://github.com/eduardoliebano" target="_blank">GH</a>
         <a href="https://linkedin.com/in/eduardoliebano" target="_blank">LI</a>
-        <a href="mailto:hola@eduardoliebano.dev">EM</a>
+        <a href="mailto:hello@eduardoliebano.dev">EM</a>
       </div>
     </div>
   </footer>
