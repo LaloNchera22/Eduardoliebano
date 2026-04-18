@@ -5,34 +5,34 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  --g-blue:    #4285F4;
-  --g-red:     #EA4335;
-  --g-yellow:  #FBBC05;
-  --g-green:   #34A853;
+  --earth-1:   #8C8474;
+  --earth-2:   #A39B8B;
+  --earth-3:   #736B5E;
+  --earth-4:   #595247;
 
-  --black:     #0A0A0A;
-  --white:     #FFFFFF;
-  --off-white: #F7F7F7;
-  --gray-50:   #FAFAFA;
-  --gray-100:  #EEEEEE;
-  --gray-200:  #CCCCCC;
-  --gray-400:  #888888;
-  --gray-600:  #555555;
-  --gray-700:  #333333;
+  --black:     #1A1A1A;
+  --white:     #D9D4C5;
+  --off-white: #C5BFB0;
+  --gray-50:   #D0CACA;
+  --gray-100:  #A19C9C;
+  --gray-200:  #8B8787;
+  --gray-400:  #6D6A6A;
+  --gray-600:  #4E4C4C;
+  --gray-700:  #363434;
 
-  --border:        2px solid var(--black);
-  --border-thick:  4px solid var(--black);
-  --border-light:  1px solid var(--gray-200);
+  --border:        3px solid var(--black);
+  --border-thick:  6px solid var(--black);
+  --border-light:  2px solid var(--gray-400);
 
   /* ── Font System ── */
-  --font-display: 'Syne', sans-serif;          /* Hero, logo — futuristic & elegant */
-  --font-ui:      'Space Grotesk', sans-serif; /* Nav, headings, buttons, labels */
-  --font-body:    'DM Sans', sans-serif;       /* Body text — clean & readable */
-  --font-code:    'JetBrains Mono', monospace; /* Terminal, code, tags */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-ui:      'Space Grotesk', sans-serif;
+  --font-body:    'Space Grotesk', sans-serif;
+  --font-code:    'JetBrains Mono', monospace;
 
-  --radius-sm: 2px;
-  --section-pad: 100px 56px;
-  --nav-h: 68px;
+  --radius-sm: 0px;
+  --section-pad: 120px 64px;
+  --nav-h: 80px;
 }
 
 /* ── RESET ── */
@@ -49,10 +49,7 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 
 /* ── UTILS ── */
-.g-blue   { color: var(--g-blue); }
-.g-red    { color: var(--g-red); }
-.g-yellow { color: var(--g-yellow); }
-.g-green  { color: var(--g-green); }
+.txt-muted { color: var(--gray-400); }
 
 /* ── ANIMATIONS ── */
 @keyframes blink   { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -104,7 +101,7 @@ ul { list-style: none; }
   transition: border-color 0.2s, color 0.2s;
 }
 .nav-links a:hover,
-.nav-links a.active { border-bottom-color: var(--g-blue); color: var(--g-blue); }
+.nav-links a.active { border-bottom-color: var(--earth-1); color: var(--earth-1); }
 
 .nav-right {
   display: flex;
@@ -124,7 +121,7 @@ ul { list-style: none; }
 .status-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
-  background: var(--g-green);
+  background: var(--earth-4);
   animation: pulse 2s infinite;
   flex-shrink: 0;
 }
@@ -183,7 +180,7 @@ ul { list-style: none; }
   display: block;
 }
 .nav-mobile-link:last-child { border-bottom: none; }
-.nav-mobile-link:hover { background: var(--off-white); color: var(--g-blue); }
+.nav-mobile-link:hover { background: var(--off-white); color: var(--earth-1); }
 
 /* ══════════════════════════════════════
    HERO
@@ -224,7 +221,7 @@ ul { list-style: none; }
 .hero-tag {
   font-family: var(--font-code);
   font-size: 0.82rem;
-  color: var(--g-blue);
+  color: var(--earth-1);
   background: rgba(66,133,244,0.07);
   border: 1.5px solid rgba(66,133,244,0.35);
   display: inline-block;
@@ -291,8 +288,8 @@ ul { list-style: none; }
   display: inline-block;
 }
 .btn-primary:hover {
-  background: var(--g-blue);
-  border-color: var(--g-blue);
+  background: var(--earth-1);
+  border-color: var(--earth-1);
   transform: translateY(-1px);
 }
 .btn-ghost {
@@ -373,10 +370,6 @@ ul { list-style: none; }
   transition: transform 0.2s;
 }
 .floating-tag:hover { transform: translateY(-2px); }
-.tag-blue   { border-color: var(--g-blue);   color: var(--g-blue); }
-.tag-red    { border-color: var(--g-red);    color: var(--g-red); }
-.tag-green  { border-color: var(--g-green);  color: var(--g-green); }
-.tag-yellow { border-color: var(--g-yellow); color: var(--g-yellow); }
 
 /* ══════════════════════════════════════
    MARQUEE
@@ -421,7 +414,7 @@ section {
 .section-num {
   font-family: var(--font-code);
   font-size: 0.72rem;
-  color: var(--g-blue);
+  color: var(--earth-1);
   letter-spacing: 0.12em;
   font-weight: 500;
 }
@@ -532,7 +525,7 @@ section {
   line-height: 1.85;
   color: #E6EDF3;
 }
-.t-prompt { color: var(--g-green); margin-right: 8px; font-weight: 700; }
+.t-prompt { color: var(--earth-4); margin-right: 8px; font-weight: 700; }
 .t-output { color: #8B949E; padding-left: 16px; }
 .t-blue   { color: #79C0FF; }
 .t-red    { color: #FF7B72; }
@@ -558,10 +551,10 @@ section {
 .skill-card:hover { background: var(--off-white); }
 .skill-card:last-child { border-right: none; }
 
-.border-blue   { border-top: 4px solid var(--g-blue); }
-.border-red    { border-top: 4px solid var(--g-red); }
-.border-yellow { border-top: 4px solid var(--g-yellow); }
-.border-green  { border-top: 4px solid var(--g-green); }
+
+
+
+
 
 .skill-card-header {
   display: flex;
@@ -710,10 +703,10 @@ section {
   width: 90px; height: 90px;
   opacity: 0.07;
 }
-.blue-accent   { background: var(--g-blue); }
-.red-accent    { background: var(--g-red); }
-.yellow-accent { background: var(--g-yellow); }
-.green-accent  { background: var(--g-green); }
+
+
+
+
 
 /* ══════════════════════════════════════
    EXPERIENCE
@@ -1042,3 +1035,9 @@ footer { border-top: var(--border-thick); }
   .section-header { margin-bottom: 40px; }
   .footer-inner { padding: 20px 18px; }
 }
+
+.border-raw { border-top: 4px solid var(--black); }
+
+.neutral-accent { background: var(--black); opacity: 0.1; }
+
+.tag-raw { border-color: var(--black); color: var(--black); }
