@@ -95,36 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const terminalLines = document.querySelectorAll('.t-output');
   terminalLines.forEach((line, i) => {
     const text = line.textContent;
-    line.textContent = '';
-    setTimeout(() => {
-      let j = 0;
-      const interval = setInterval(() => {
-        line.textContent += text[j];
-        j++;
-        if (j >= text.length) clearInterval(interval);
-      }, 16);
-    }, 500 + i * 110);
+    line.textContent = text; // Just show text immediately
   });
-
-  // ── Cursor glow effect (desktop only) ──
-  if (window.matchMedia('(pointer: fine)').matches) {
-    const glow = document.createElement('div');
-    glow.style.cssText = `
-      position: fixed;
-      pointer-events: none;
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(66,133,244,0.06) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      transition: left 0.18s ease, top 0.18s ease;
-    `;
-    document.body.appendChild(glow);
-    document.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top  = e.clientY + 'px';
-    }, { passive: true });
-  }
 
 });
